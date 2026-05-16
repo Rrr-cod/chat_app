@@ -1,0 +1,57 @@
+{
+  "folders": [
+    { "name": "💬 Chat App (Root)", "path": "." },
+    { "name": "🖥️ Server", "path": "server" },
+    { "name": "🎨 Client", "path": "client" }
+  ],
+  "settings": {
+    "editor.fontSize": 14,
+    "editor.tabSize": 2,
+    "editor.formatOnSave": true,
+    "editor.wordWrap": "on",
+    "workbench.colorTheme": "Default Dark Modern",
+    "explorer.compactFolders": false,
+    "files.autoSave": "afterDelay",
+    "emmet.includeLanguages": { "javascript": "javascriptreact" }
+  },
+  "extensions": {
+    "recommendations": [
+      "esbenp.prettier-vscode",
+      "dbaeumer.vscode-eslint",
+      "PKief.material-icon-theme",
+      "mongodb.mongodb-vscode",
+      "humao.rest-client",
+      "dsznajder.es7-react-js-snippets"
+    ]
+  },
+  "launch": {
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "type": "node",
+        "request": "launch",
+        "name": "▶ Start Server",
+        "program": "${workspaceFolder}/server/index.js",
+        "envFile": "${workspaceFolder}/server/.env",
+        "console": "integratedTerminal"
+      }
+    ]
+  },
+  "tasks": {
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Install Server Dependencies",
+        "type": "shell",
+        "command": "cd server && npm install",
+        "group": "build"
+      },
+      {
+        "label": "Install Client Dependencies",
+        "type": "shell",
+        "command": "cd client && npm install",
+        "group": "build"
+      }
+    ]
+  }
+}
